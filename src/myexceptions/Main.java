@@ -14,13 +14,17 @@ public class Main {
         String password = SCANNER.nextLine();
         System.out.println("Введите пароль еще раз");
         String confirmPassword = SCANNER.nextLine();
-      try {
-          checkCredentials(login,password,confirmPassword);
-          System.out.println("Данные успешно проверены");
-      } catch (WrongLoginException|WrongPasswordException e){
-          System.out.println("Данные не прошли проверку");
-          e.printStackTrace();
-      }
+        try {
+            checkCredentials(login, password, confirmPassword);
+
+        } catch (WrongLoginException | WrongPasswordException e) {
+            System.out.println("Данные не прошли проверку");
+            e.printStackTrace();
+
+        } finally {
+            System.out.println("Данные успешно проверены");
+
+        }
 
     }
 
